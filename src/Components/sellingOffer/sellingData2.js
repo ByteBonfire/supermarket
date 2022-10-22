@@ -1,40 +1,40 @@
-const sellingData = [
+const sellingData1 = [
   {
-    text: "salt",
+    text: "saltooo",
     rating: 3,
     price: 20,
     discount: 2,
   },
   {
-    text: "salt",
+    text: "salteee",
     rating: 3,
     price: 200,
     discount: 2,
   },
   {
-    text: "salt",
+    text: "saltulo",
     rating: 3,
     price: 200,
     discount: 2,
   },
   {
-    text: "salt",
+    text: "saltale",
     rating: 3,
     price: 200,
     discount: 2,
   },
   {
-    text: "salt",
+    text: "saltuuuo",
     rating: 3,
     price: 200,
     discount: 2,
   },
   {
-    text: "salt",
+    text: "saltpo",
     rating: 3,
     price: 200,
     discount: 2,
   },
 ];
 
-export default sellingData;
+export default sellingData1;

@@ -196,7 +196,7 @@ const SubHeader = () => {
                   <a href="offers.html">Offers</a>
                 </li>
                 <li>
-                  <a href="contact.html">Contact</a>
+                  <a href="/contactus">Contact</a>
                 </li>
               </ul>
             </div>

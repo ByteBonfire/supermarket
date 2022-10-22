@@ -15,7 +15,7 @@ const Header = () => {
           </div>
           <div class="w3ls_logo_products_left">
             <h1>
-              <a href="index.html">super Market</a>
+              <a href="/home">super Market</a>
             </h1>
           </div>
           <div class="w3l_search">

@@ -38,19 +38,19 @@ const Footer = () => {
               <ul class="info">
                 <li>
                   <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                  <a href="about.html">About Us</a>
+                  <a href="/aboutus">About Us</a>
                 </li>
                 <li>
                   <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                  <a href="contact.html">Contact Us</a>
+                  <a href="/contactUS">Contact Us</a>
                 </li>
                 <li>
                   <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                  <a href="short-codes.html">Short Codes</a>
+                  <a href="/shortcodes">Short Codes</a>
                 </li>
                 <li>
                   <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                  <a href="faq.html">FAQ's</a>
+                  <a href="/faq">FAQ's</a>
                 </li>
                 <li>
                   <i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -96,11 +96,11 @@ const Footer = () => {
                 </li>
                 <li>
                   <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                  <a href="login.html">Login</a>
+                  <a href="/login">Login</a>
                 </li>
                 <li>
                   <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                  <a href="registered.html">Create Account</a>
+                  <a href="/signup">Create Account</a>
                 </li>
               </ul>
             </div>
@@ -122,22 +122,34 @@ const Footer = () => {
           <div class="w3layouts-foot">
             <ul>
               <li>
-                <a href="#" class="w3_agile_facebook">
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  class="w3_agile_facebook"
+                >
                   <i class="fa fa-facebook" aria-hidden="true"></i>
                 </a>
               </li>
               <li>
-                <a href="#" class="agile_twitter">
+                <a
+                  href="https://www.twitter.com"
+                  target="_blank"
+                  class="agile_twitter"
+                >
                   <i class="fa fa-twitter" aria-hidden="true"></i>
                 </a>
               </li>
               <li>
-                <a href="#" class="w3_agile_dribble">
+                <a href="#" target="_blank" class="w3_agile_dribble">
                   <i class="fa fa-dribbble" aria-hidden="true"></i>
                 </a>
               </li>
               <li>
-                <a href="#" class="w3_agile_vimeo">
+                <a
+                  href="https://www.vimeo.com"
+                  target="_blank"
+                  class="w3_agile_vimeo"
+                >
                   <i class="fa fa-vimeo" aria-hidden="true"></i>
                 </a>
               </li>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Contact = () => {
+const ContactUs = () => {
   return (
     <div>
       <div class="breadcrumbs">
@@ -18,7 +18,7 @@ const Contact = () => {
                 Home
               </a>
             </li>
-            <li class="active">Contact</li>
+            <li class="active">ContactUs</li>
           </ol>
         </div>
       </div>
@@ -26,12 +26,14 @@ const Contact = () => {
       <div class="about">
         <div class="w3_agileits_contact_grids">
           <div class="col-md-6 w3_agileits_contact_grid_left">
-            <div class="agile_map">
+            {/* Problem on google map start */}
+            {/* <div class="agile_map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.3905851087434!2d-34.90500565012194!3d-8.061582082752993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18d90992e4ab%3A0x8e83c4afabe39a3a!2sSport+Club+Do+Recife!5e0!3m2!1sen!2sin!4v1478684415917"
                 style="border:0"
               ></iframe>
-            </div>
+            </div> */}
+            {/* problem on google map end */}
             <div class="agileits_w3layouts_map_pos">
               <div class="agileits_w3layouts_map_pos1">
                 <h3>Contact Info</h3>
@@ -113,4 +115,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactUs;

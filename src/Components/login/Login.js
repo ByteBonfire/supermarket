@@ -1,61 +1,90 @@
-import React from "react";
+import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  // handleSubmit = (data) => {
+  //   console.log(data, "hii");
+  // };
+  const onsubmit = (data) => {
+    toast.success("sucess");
+    console.log(data, "hii");
+  };
   return (
-    <div>
+    <>
       <div>
-        <div class="breadcrumbs">
-          <div class="container">
-            <ol
-              class="breadcrumb breadcrumb1 animated wow slideInLeft"
-              data-wow-delay=".5s"
-            >
-              <li>
-                <a href="index.html">
+        <div>
+          <div class="breadcrumbs">
+            <div class="container">
+              <ol
+                class="breadcrumb breadcrumb1 animated wow slideInLeft"
+                data-wow-delay=".5s"
+              >
+                <li>
+                  <a href="index.html">
+                    <span
+                      class="glyphicon glyphicon-home"
+                      aria-hidden="true"
+                    ></span>
+                    Home
+                  </a>
+                </li>
+                <li class="active">Login Page</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="login">
+            <div class="container">
+              <h2>Login Form</h2>
+
+              <div
+                class="login-form-grids animated wow slideInUp"
+                data-wow-delay=".5s"
+              >
+                <form onSubmit={handleSubmit(onsubmit)}>
+                  {/* <input {...register("firstName")} />
+                  <input {...register("lastName", { required: true })} /> */}
+                  <input
+                    {...register("email")}
+                    type="email"
+                    placeholder="Email Address"
+                    required=" "
+                  />
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    required=" "
+                    {...register("password")}
+                  />
+                  <div class="forgot">
+                    <a href="#">Forgot Password?</a>
+                  </div>
+                  <input type="submit" value="Login" />
+                </form>
+              </div>
+              <h4>For New People</h4>
+              <p>
+                <a href="/signup">Register Here</a> (Or) go back to{" "}
+                <a href="/home">
+                  Home
                   <span
-                    class="glyphicon glyphicon-home"
+                    class="glyphicon glyphicon-menu-right"
                     aria-hidden="true"
                   ></span>
-                  Home
                 </a>
-              </li>
-              <li class="active">Login Page</li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="login">
-          <div class="container">
-            <h2>Login Form</h2>
-
-            <div
-              class="login-form-grids animated wow slideInUp"
-              data-wow-delay=".5s"
-            >
-              <form>
-                <input type="email" placeholder="Email Address" required=" " />
-                <input type="password" placeholder="Password" required=" " />
-                <div class="forgot">
-                  <a href="#">Forgot Password?</a>
-                </div>
-                <input type="submit" value="Login" />
-              </form>
+              </p>
             </div>
-            <h4>For New People</h4>
-            <p>
-              <a href="registered.html">Register Here</a> (Or) go back to{" "}
-              <a href="index.html">
-                Home
-                <span
-                  class="glyphicon glyphicon-menu-right"
-                  aria-hidden="true"
-                ></span>
-              </a>
-            </p>
           </div>
         </div>
+        <ToastContainer />
       </div>
-    </div>
+    </>
   );
 };
 

@@ -7,7 +7,12 @@ import Navbar from "../Components/navbar/Navbar";
 import SubHeader from "../Components/subHeader/SubHeader";
 import Login from "../Components/login/Login";
 import Signup from "../Components/signup/Signup";
-import Contact from "../Components/contact/contact";
+import ContactUs from "../Components/contactUs/ContactUs";
+import AdvertiseOffer from "../view/advertiseOffer/AdvertiseOffer";
+import AboutUS from "../Components/aboutUS/AboutUS";
+import ShortCodes from "../Components/shortCodes/ShortCodes";
+import FAQ from "../Components/faq/FAQ";
+
 const Router = () => {
   return (
     <div>
@@ -16,10 +21,14 @@ const Router = () => {
         <Header />
         <SubHeader />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="/advertiseoffer" element={<AdvertiseOffer />} />
+          <Route path="/aboutus" element={<AboutUS />} />
+          <Route path="/shortcodes" element={<ShortCodes />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
         <Footer />
       </BrowserRouter>

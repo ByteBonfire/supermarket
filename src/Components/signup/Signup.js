@@ -1,8 +1,13 @@
-import React from "react";
+import { useForm } from "react-hook-form";
 
 const Signup = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   return (
-    <>
+    <form onSubmit={handleSubmit((data) => console.log(data))}>
       <div class="breadcrumbs">
         <div class="container">
           <ol
@@ -41,7 +46,10 @@ const Signup = () => {
               </div>
             </div>
             <h6>Login information</h6>
-            <form action="#" method="post">
+            <form
+              // action="#"
+              method="post"
+            >
               <input type="email" placeholder="Email Address" required=" " />
               <input type="password" placeholder="Password" required=" " />
               <input
@@ -65,7 +73,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
-    </>
+    </form>
   );
 };
 
