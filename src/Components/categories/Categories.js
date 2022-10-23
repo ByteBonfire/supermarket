@@ -29,13 +29,17 @@ const Categories = () => {
       <div class="category-container">
         {catagorylist.map((data, index) => {
           return (
-            <div>
-              <p>{data.title}</p>
-              <p>{data.slug}</p>
-            </div>
+            <>
+              <div class="small-container">
+                <p>{data.title}</p>
+                <p>{data.slug}</p>
+              </div>
+              <br />
+            </>
           );
         })}
       </div>
+      ;
     </div>
   );
 };

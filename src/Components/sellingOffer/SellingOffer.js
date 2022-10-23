@@ -10,17 +10,17 @@ const SellingOffer = () => {
   const handler1 = () => {
     setOffer1(!offer1);
   };
-  // city required error begin
+
   const [sellingitem, setSellingitem] = useState([]);
 
   const hitme = () => {
     axios
       .get(
-        "https://uat.ordering-farmshop.ekbana.net/api/v4/product?allProduct",
+        "https://uat.ordering-farmshop.ekbana.net/api/v4/product?allProduct=1",
         {
           headers: {
             "Api-Key": "3uxpudnPFywb4AYZjjpbhOHRV3YMTNscyRF4AiVZi2go6brJMx",
-            City: "kathmandu",
+            "Warehouse-Id": "1",
           },
         }
       )
@@ -36,18 +36,17 @@ const SellingOffer = () => {
   return (
     <div>
       <button onClick={hitme}>hitme</button>
-      <p>sdd</p>
-      {sellingitem.map((data, index) => {
+      fghj
+      {/* {sellingitem.map((data, index) => {
         return (
           <div>
-            <p>{data.id}</p>
+            <p>hdhfja</p>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 };
-// city error end
 
 //   return (
 //     <>
