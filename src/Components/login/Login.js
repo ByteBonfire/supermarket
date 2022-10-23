@@ -1,19 +1,30 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Login = () => {
+const Login = ({ information }) => {
+  console.log(information, "hello everyone");
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  // handleSubmit = (data) => {
-  //   console.log(data, "hii");
-  // };
+
   const onsubmit = (data) => {
-    toast.success("sucess");
-    console.log(data, "hii");
+    // toast.success("sucess");
+    console.log(data, "loginData");
+    axios
+      .post("https://uat.ordering-farmshop.ekbana.net/api/v4/aut/login", {
+        email: "koklasstest@gmail.com",
+        password: 123456,
+      })
+      .then((response) => {
+        console.log(response, "response");
+      })
+      .catch((error) => {
+        console.log(error, "oops");
+      });
   };
   return (
     <>
@@ -48,8 +59,6 @@ const Login = () => {
                 data-wow-delay=".5s"
               >
                 <form onSubmit={handleSubmit(onsubmit)}>
-                  {/* <input {...register("firstName")} />
-                  <input {...register("lastName", { required: true })} /> */}
                   <input
                     {...register("email")}
                     type="email"

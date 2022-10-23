@@ -3,15 +3,32 @@ import { useLinkClickHandler } from "react-router-dom";
 import sellingData from "./sellingData";
 import "./sellingOffer.css";
 import sellingData1 from "./sellingData2";
+import axios from "axios";
 
 const SellingOffer = () => {
   const [offer1, setOffer1] = useState(false);
   const handler1 = () => {
     setOffer1(!offer1);
   };
+  const hitme = () => {
+    axios
+      .get("https://uat.ordering-farmshop.ekbana.net/api/v4/config", {
+        headers: {
+          "Api-Key": "3uxpudnPFywb4AYZjjpbhOHRV3YMTNscyRF4AiVZi2go6brJMx",
+        },
+      })
+      .then((res) => {
+        console.log(res, "ok");
+      })
+      .catch((err) => {
+        console.log(err, "sorry");
+      });
+  };
+
   return (
     <>
       <div>
+        <button onClick={hitme}>hitme</button>
         <div class="top-brands">
           <div class="container">
             <h2>Top selling offers</h2>
