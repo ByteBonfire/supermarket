@@ -1,0 +1,12 @@
+.image-slider {
+  position: relative;
+}
+
+.slide-desc {
+  position: absolute;
+  margin-top: -280px;
+  margin-left: 280px;
+  color: white;
+  font-size: 35px;
+  font-weight: 500;
+}

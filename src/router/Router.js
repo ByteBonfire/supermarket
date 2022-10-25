@@ -13,6 +13,7 @@ import AboutUS from "../Components/aboutUS/AboutUS";
 import ShortCodes from "../Components/shortCodes/ShortCodes";
 import FAQ from "../Components/faq/FAQ";
 import Categories from "../Components/categories/Categories";
+import Try from "../Components/try/Try";
 
 const Router = () => {
   return (
@@ -31,6 +32,7 @@ const Router = () => {
           <Route path="/shortcodes" element={<ShortCodes />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/category" element={<Categories />} />
+          {/* <Route path="/try" element={<Try />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter>
