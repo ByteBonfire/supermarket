@@ -9,7 +9,7 @@ const Bannerdata = [
   },
   {
     image: "assets/images/44.jpg",
-    text: "Whole Spices Products Are Now avialable ",
+    text: "Whole Spices Products Are Now available ",
   },
 ];
 export default Bannerdata;

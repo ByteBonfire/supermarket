@@ -1,13 +1,11 @@
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Bannerdata from "./Bannerdata";
-import "./banner.css";
+import SubBannerButtomData from "./SubBannerBottomData";
 
-const Banner = () => {
+const SubBannerBottom = () => {
   const settings = {
-    // dots: true,
+    dots: true,
     infinite: true,
     speed: 1500,
     slidesToShow: 1,
@@ -18,14 +16,11 @@ const Banner = () => {
   return (
     <div>
       <Slider {...settings}>
-        {Bannerdata.map((dataa, index) => {
+        {SubBannerButtomData.map((dataa, index) => {
           return (
             <div>
               <div>
                 <img className="image-slider" src={dataa.image} alt="" />
-                <div class="slide-desc">
-                  <p>{dataa.text}</p>
-                </div>
               </div>
             </div>
           );
@@ -35,4 +30,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default SubBannerBottom;

@@ -3,6 +3,7 @@ import Banner from "../../Components/banner/Banner";
 import BannerBottom from "../../Components/bannerBottom/BannerBottom";
 import BrandStore from "../../Components/brandStore/BrandStore";
 import SellingOffer from "../../Components/sellingOffer/SellingOffer";
+import SubBannerBottom from "../../Components/subBannerBottom/SubBannerBottom";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <SellingOffer />
 
       {/* <BrandStore /> */}
+      <SubBannerBottom />
       <BannerBottom />
     </div>
   );
