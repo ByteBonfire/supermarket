@@ -25,17 +25,18 @@ const Router = () => {
         <SubHeader />
         <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path="/" element={<Navigate replace to="/home" />} />
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/advertiseoffer" element={<AdvertiseOffer />} />
+          <Route path="/offer" element={<Navigate to="/advertiseoffer" />} />
           <Route path="/aboutus" element={<AboutUS />} />
           <Route path="/shortcodes" element={<ShortCodes />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/category" element={<Categories />} />
           <Route path="/notfound" element={<NotFound />} />
-
+          <Route path="*" element={<NotFound />} />
           {/* <Route path="/try" element={<Try />} /> */}
         </Routes>
         <Footer />

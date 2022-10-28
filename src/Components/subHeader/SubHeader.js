@@ -22,13 +22,17 @@ const SubHeader = () => {
             <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
               <ul class="nav navbar-nav">
                 <li class="active">
-                  <a href="index.html" class="act">
+                  <a href="/home" class="act">
                     Home
                   </a>
                 </li>
 
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <a
+                    href="/category"
+                    class="dropdown-toggle"
+                    data-toggle="dropdown"
+                  >
                     Groceries<b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu multi-column columns-3">
@@ -60,7 +64,11 @@ const SubHeader = () => {
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <a
+                    href="/category"
+                    class="dropdown-toggle"
+                    data-toggle="dropdown"
+                  >
                     Household<b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu multi-column columns-3">
@@ -92,7 +100,11 @@ const SubHeader = () => {
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <a
+                    href="/category"
+                    class="dropdown-toggle"
+                    data-toggle="dropdown"
+                  >
                     Personal Care<b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu multi-column columns-3">
@@ -126,7 +138,11 @@ const SubHeader = () => {
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <a
+                    href="/category"
+                    class="dropdown-toggle"
+                    data-toggle="dropdown"
+                  >
                     Packaged Foods<b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu multi-column columns-3">
@@ -158,7 +174,11 @@ const SubHeader = () => {
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <a
+                    href="/category"
+                    class="dropdown-toggle"
+                    data-toggle="dropdown"
+                  >
                     Beverages<b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu multi-column columns-3">
@@ -193,7 +213,7 @@ const SubHeader = () => {
                   <a href="gourmet.html">Gourmet</a>
                 </li>
                 <li>
-                  <a href="offers.html">Offers</a>
+                  <a href="/offer">Offers</a>
                 </li>
                 <li>
                   <a href="/contactus">Contact</a>
