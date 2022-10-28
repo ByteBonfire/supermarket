@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "../Components/header/Header";
 import Footer from "../Components/footer/Footer";
 import Home from "../view/home/Home";
@@ -14,6 +14,7 @@ import ShortCodes from "../Components/shortCodes/ShortCodes";
 import FAQ from "../Components/faq/FAQ";
 import Categories from "../Components/categories/Categories";
 import Try from "../Components/try/Try";
+import NotFound from "../Components/notFound.js/NotFound";
 
 const Router = () => {
   return (
@@ -24,6 +25,7 @@ const Router = () => {
         <SubHeader />
         <Routes>
           <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Navigate replace to="/home" />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/contactUs" element={<ContactUs />} />
@@ -32,6 +34,8 @@ const Router = () => {
           <Route path="/shortcodes" element={<ShortCodes />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/category" element={<Categories />} />
+          <Route path="/notfound" element={<NotFound />} />
+
           {/* <Route path="/try" element={<Try />} /> */}
         </Routes>
         <Footer />
