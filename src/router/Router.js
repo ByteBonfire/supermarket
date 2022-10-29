@@ -16,6 +16,7 @@ import Categories from "../Components/categories/Categories";
 import Try from "../Components/try/Try";
 import NotFound from "../Components/notFound/NotFound";
 import Modale from "../Components/modale/Modale";
+import GroceryCatlog from "../Components/grocery/GroceryCatlog";
 
 const Router = () => {
   const Auth = false;
@@ -48,7 +49,8 @@ const Router = () => {
           <Route path="/category" element={<Categories />} />
           <Route path="/modale" element={<Modale />} />
           <Route path="/*" element={<NotFound />} />
-          {/* <Route path="/notfound" element={<NotFound />} /> */}
+          <Route path="/productlist" element={<GroceryCatlog />} />
+
           {/* <Route path="/try" element={<Try />} /> */}
         </Routes>
         <Footer />
