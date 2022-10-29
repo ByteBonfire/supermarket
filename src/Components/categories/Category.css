@@ -9,3 +9,15 @@
   width: 20%;
   height: 50%;
 }
+.category-containeror {
+  padding: 10px;
+  background-color: brown;
+  display: flex;
+  flex-wrap: wrap;
+  height: 80%;
+  width: 80%;
+}
+.product-cartt {
+  width: 30%;
+  height: 20%;
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-// import "./Category.css";
-import "../sellingOffer/sellingOffer.css";
+import "./Category.css";
+// import "../sellingOffer/sellingOffer.css";
 
 const Categories = () => {
   const [catagorylist, setCategorylist] = useState([]);
@@ -22,11 +22,11 @@ const Categories = () => {
       });
   }, [setCategorylist]);
   return (
-    <div>
-      {catagorylist.map((data, index) => {
+    <div className="category-containeror">
+      {catagorylist.slice(0, 9).map((data, index) => {
         return (
           <>
-            <div class="col-md-4 top_brand_left product-cart">
+            <div class="col-md-4 top_brand_left product-cartt">
               <div class="hover14 column">
                 <div class="agile_top_brand_left_grid">
                   <div class="agile_top_brand_left_grid_pos">
@@ -39,8 +39,8 @@ const Categories = () => {
                   <div class="product-Desc">
                     <img
                       src={data.backgroundImage}
-                      width="200px"
-                      height="120px"
+                      width="65rem"
+                      height="35rem"
                     />
                     <p>{data.title}</p>
 
