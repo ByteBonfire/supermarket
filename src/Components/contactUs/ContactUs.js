@@ -1,8 +1,34 @@
+import axios from "axios";
 import React from "react";
+import { useForm } from "react-hook-form";
+import { collapseToast } from "react-toastify";
 
 const ContactUs = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data, "contactus");
+
+    axios
+      .post("https://uat.ordering-farmshop.ekbana.net/api/v4/contact-us", {
+        headers: {
+          "Api-Key": "3uxpudnPFywb4AYZjjpbhOHRV3YMTNscyRF4AiVZi2go6brJMx",
+        },
+      })
+      .then((response) => {
+        console.log(response, "contact sucess");
+      })
+      .catch((error) => {
+        console.log(error, "Contact failed");
+      });
+  };
+
   return (
     <div>
+      {/* <button onClick={hitme}>hitme</button> */}
       <div class="breadcrumbs">
         <div class="container">
           <ol
@@ -69,9 +95,10 @@ const ContactUs = () => {
               Leave a<span> Message</span>
             </h2>
 
-            <form action="#" method="post">
+            <form onSubmit={handleSubmit(onSubmit)}>
               <span class="input input--ichiro">
                 <input
+                  {...register("Name")}
                   class="input__field input__field--ichiro"
                   type="text"
                   id="input-25"
@@ -87,6 +114,7 @@ const ContactUs = () => {
               </span>
               <span class="input input--ichiro">
                 <input
+                  {...register("Email")}
                   class="input__field input__field--ichiro"
                   type="email"
                   id="input-26"
@@ -101,6 +129,7 @@ const ContactUs = () => {
                 </label>
               </span>
               <textarea
+                {...register("Message")}
                 name="Message"
                 placeholder="Your message here..."
                 required=""

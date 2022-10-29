@@ -15,10 +15,10 @@ const Login = ({ information }) => {
     // toast.success("sucess");
     console.log(data, "loginData");
     axios
-      .post("https://uat.ordering-farmshop.ekbana.net/api/v4/aut/login", {
-        email: "koklasstest@gmail.com",
-        password: 123456,
-      })
+      .post(
+        "https://uat.ordering-farmshop.ekbana.net/api/v4/aut/login"
+        // localStorage.getItem("info")
+      )
       .then((response) => {
         console.log(response, "response");
       })

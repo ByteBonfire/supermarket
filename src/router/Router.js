@@ -14,9 +14,11 @@ import ShortCodes from "../Components/shortCodes/ShortCodes";
 import FAQ from "../Components/faq/FAQ";
 import Categories from "../Components/categories/Categories";
 import Try from "../Components/try/Try";
-import NotFound from "../Components/notFound.js/NotFound";
+import NotFound from "../Components/notFound/NotFound";
 
 const Router = () => {
+  const Auth = false;
+
   return (
     <div>
       <BrowserRouter>
@@ -25,9 +27,17 @@ const Router = () => {
         <SubHeader />
         <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Navigate replace to="/home" />} />
+
           <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+
+          {/* privating routing for signup starts */}
+          {/* <Route
+            path="/login"
+            element={Auth ? <Login /> : <Navigate to="/signup" />}
+          /> */}
+          {/* privating routing for signup ends*/}
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/advertiseoffer" element={<AdvertiseOffer />} />
           <Route path="/offer" element={<Navigate to="/advertiseoffer" />} />
@@ -35,8 +45,8 @@ const Router = () => {
           <Route path="/shortcodes" element={<ShortCodes />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/category" element={<Categories />} />
-          <Route path="/notfound" element={<NotFound />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/*" element={<NotFound />} />
+          {/* <Route path="/notfound" element={<NotFound />} /> */}
           {/* <Route path="/try" element={<Try />} /> */}
         </Routes>
         <Footer />

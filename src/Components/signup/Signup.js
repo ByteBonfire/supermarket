@@ -13,35 +13,36 @@ const Signup = () => {
   } = useForm();
   const [signupData, setsignupData] = useState();
   const onSubmit = (data) => {
+    const signUpData = {
+      first_name: data.first_name,
+      last_name: data.last_name,
+      mobile_number: data.mobile_number,
+      email: data.email,
+      password: data.password,
+    };
     axios
-      .post("https://uat.ordering-farmshop.ekbana.net/api/v4/auth/signup", {
-        first_name: "Neeki",
-        last_name: "Pradhan",
-        email: "passina323232125@m.com",
-        mobile_number: "9893758602",
-        password: "123456",
-      })
+      .post(
+        "https://uat.ordering-farmshop.ekbana.net/api/v4/auth/signup",
+        signUpData
+      )
 
       .then((response) => {
-        console.log(response);
-        setsignupData(data);
+        console.log(response, "sucess");
+        // setsignupData(data);
 
         localStorage.setItem(
           "info",
           JSON.stringify({
-            first_name: "Neeki",
-            last_name: "Pradhan",
-            email: "hejooo@g.com",
-            mobile_number: "9898054682",
-            password: "123456",
+            email: data.email,
+            mobile_number: data.mobile_number,
+            password: data.password,
+            signupId: response.data.data.id,
           })
         );
       })
       .catch((error) => {
         console.log(error, "sorryyyyy");
       });
-
-    console.log(data, "dfghjkl");
   };
   return (
     <>
@@ -70,7 +71,7 @@ const Signup = () => {
           <h2>Register Here</h2>
           <div class="login-form-grids">
             <h5>profile information</h5>
-            <form form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               {/* <form action="#" method="post"> */}
               <input
                 {...register("first_name")}
@@ -104,6 +105,7 @@ const Signup = () => {
                 placeholder="Email Address"
                 required=" "
               />
+              <br />
               <input
                 {...register("mobile_number")}
                 type="text"
