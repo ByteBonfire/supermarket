@@ -15,6 +15,7 @@ import FAQ from "../Components/faq/FAQ";
 import Categories from "../Components/categories/Categories";
 import Try from "../Components/try/Try";
 import NotFound from "../Components/notFound/NotFound";
+import Modale from "../Components/modale/Modale";
 
 const Router = () => {
   const Auth = false;
@@ -45,6 +46,7 @@ const Router = () => {
           <Route path="/shortcodes" element={<ShortCodes />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/category" element={<Categories />} />
+          <Route path="/modale" element={<Modale />} />
           <Route path="/*" element={<NotFound />} />
           {/* <Route path="/notfound" element={<NotFound />} /> */}
           {/* <Route path="/try" element={<Try />} /> */}
