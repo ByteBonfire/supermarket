@@ -1,47 +1,90 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
-const initialState = [];
+const initialState = {
+  cartitem: localStorage.getItem("CartitemInfo")
+    ? JSON.parse(localStorage.getItem("CartitemInfo"))
+    : [],
+  state: null,
+};
 
+// const initialState = {
+//   value: 0,
+// };
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    increment(state) {
+      state.value += 1;
+    },
     addToCart(state, action) {
       // if the item id is already in the cart, increase the quantity by 1
       // else add the item to the cart
-      const item = state.find((item) => item.id === action.payload.id);
-      if (item) {
-        item.quantity += 1;
+      const itemIndex = state.cartitem.findIndex(
+        (item) => item.id === action.payload.id
+      );
+
+      if (itemIndex >= 0) {
+        state.cartitem[itemIndex].cartQuantity += 1;
+        toast.info(` ${action.payload.title}'s Quantity increased`, {
+          position: "top-right",
+        });
       } else {
-        state.push(action.payload);
+        const tempProduct = { ...action.payload, cartQuantity: 1 };
+        state.cartitem.push(tempProduct);
+        toast.success(`${action.payload.title} added successfully`, {
+          position: "top-right",
+        });
       }
+      localStorage.setItem("CartitemInfo", JSON.stringify(state.cartitem));
+
+      //   if (item) {
+      //     item.quantity += 1;
+      //   } else {
+      //     state.cartitem.push(action.payload);
+      //   }
+      //   state.cartitem.push(action.payload);
     },
-    clearCart(state) {
-      state.length = 0;
+
+    // clear cart
+    clearCart(state, action) {
+      state.cartitem = [];
+      toast.error(`Your cart is cleared`, {
+        position: "top-right",
+      });
+      localStorage.setItem("CartitemInfo", JSON.stringify(state.cartitem));
     },
     // to delete an item from the cart
     deleteItem(state, action) {
-      state.splice(action.payload, 1);
+      const nextCartItem = state.cartitem.filter(
+        (cartRemoveItem) => cartRemoveItem.id !== action.payload.id
+      );
+      state.cartitem = nextCartItem;
+      localStorage.setItem("CartitemInfo", JSON.stringify(state.cartitem));
+      toast.error(`${action.payload.title} removed successfully`, {
+        position: "top-right",
+      });
     },
 
     // increase the quantity of an item in the cart by 1 if it is already in the cart
     increaseQuantity(state, action) {
-      state = state.map((item) => {
-        if (item.id === action.payload) {
-          item.quantity += 1;
-        }
-        return item;
-      });
+      const itemIndex = state.cartitem.findIndex(
+        (cartitem) => cartitem.id === action.payload.id
+      );
+      if (state.cartitem[itemIndex].cartQuantity >= 1) {
+        state.cartitem[itemIndex].cartQuantity += 1;
+      }
     },
 
     // decrease the quantity of an item in the cart by 1 if it is already in the cart
     decreaseQuantity(state, action) {
-      state = state.map((item) => {
-        if (item.id === action.payload) {
-          item.quantity -= 1;
-        }
-        return item;
-      });
+      const itemIndex = state.cartitem.findIndex(
+        (cartitem) => cartitem.id === action.payload.id
+      );
+      if (state.cartitem[itemIndex].cartQuantity > 1) {
+        state.cartitem[itemIndex].cartQuantity -= 1;
+      }
     },
   },
 });
@@ -53,6 +96,7 @@ export const {
   deleteItem,
   increaseQuantity,
   decreaseQuantity,
+  increment,
 } = cartSlice.actions;
 
 // exporting the reducer

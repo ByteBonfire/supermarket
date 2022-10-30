@@ -2,9 +2,22 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Category.css";
 // import "../sellingOffer/sellingOffer.css";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cart";
+import { useNavigate } from "react-router-dom";
 
 const Categories = () => {
   const [catagorylist, setCategorylist] = useState([]);
+
+  const dispatch = useDispatch();
+
+  const Navigate = useNavigate();
+
+  const handleAddToCart = (data) => {
+    dispatch(addToCart(data));
+    Navigate("/mycart");
+  };
+
   useEffect(() => {
     axios
       .get("https://uat.ordering-farmshop.ekbana.net/api/v4/category", {
@@ -21,6 +34,7 @@ const Categories = () => {
         console.log(error, "faileddd");
       });
   }, [setCategorylist]);
+
   return (
     <div className="category-containeror">
       {catagorylist.slice(0, 9).map((data, index) => {
@@ -43,81 +57,27 @@ const Categories = () => {
                       height="35rem"
                     />
                     <p>{data.title}</p>
+                    {/* <p>ProductId: {data.id}</p> */}
 
                     <p>ProductCount: {data.productCount}</p>
+                    <div class="snipcart-details top_brand_home_details">
+                      <input
+                        onClick={() => handleAddToCart(data)}
+                        type="submit"
+                        name="submit"
+                        value="Add to cart"
+                        class="button"
+                      />
+                    </div>
                   </div>
 
-                  <div class="agile_top_brand_left_grid1">
-                    <figure>
-                      <div class="snipcart-item block">
-                        <div class="snipcart-details top_brand_home_details">
-                          <form action="#" method="post">
-                            <fieldset>
-                              <input type="hidden" name="cmd" value="_cart" />
-                              <input type="hidden" name="add" value="1" />
-                              <input type="hidden" name="business" value=" " />
-                              <input
-                                type="hidden"
-                                name="item_name"
-                                value="Fortune Sunflower Oil"
-                              />
-                              <input
-                                type="hidden"
-                                name="amount"
-                                value="20.99"
-                              />
-                              <input
-                                type="hidden"
-                                name="discount_amount"
-                                value="1.00"
-                              />
-                              <input
-                                type="hidden"
-                                name="currency_code"
-                                value="USD"
-                              />
-                              <input type="hidden" name="return" value=" " />
-                              <input
-                                type="hidden"
-                                name="cancel_return"
-                                value=" "
-                              />
-                              <input
-                                type="submit"
-                                name="submit"
-                                value="Add to cart"
-                                class="button"
-                              />
-                            </fieldset>
-                          </form>
-                        </div>
-                      </div>
-                    </figure>
-                  </div>
+                  <div class="agile_top_brand_left_grid1"></div>
                 </div>
               </div>
             </div>
           </>
         );
       })}
-      {/* <button onClick={categoiesHandler}>clickme</button>
-      <p>this is api</p>
-      <div class="category-container">
-        {catagorylist.map((data, index) => {
-          return (
-            <>
-              <div class="small-container">
-                <p>{data.title}</p>
-                <p>{data.slug}</p>
-                <p>{data.id}</p>
-                <img src={data.backgroundImage} />
-              </div>
-              <br />
-            </>
-          );
-        })}
-      </div>
-      ; */}
     </div>
   );
 };

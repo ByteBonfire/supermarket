@@ -4,12 +4,15 @@ import sellingData from "./sellingData";
 import "./sellingOffer.css";
 import sellingData1 from "./sellingData2";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/cart";
 
 const SellingOffer = () => {
   const [offer1, setOffer1] = useState(false);
   const handler1 = () => {
     setOffer1(!offer1);
   };
+  const dispatch = useDispatch();
 
   const [sellingitem, setSellingitem] = useState([]);
 
@@ -129,7 +132,7 @@ const SellingOffer = () => {
                               <figure>
                                 <div class="snipcart-item block">
                                   <div class="snipcart-details top_brand_home_details">
-                                    <form action="#" method="post">
+                                    <form>
                                       <fieldset>
                                         <input
                                           type="hidden"
@@ -177,6 +180,7 @@ const SellingOffer = () => {
                                           value=" "
                                         />
                                         <input
+                                          onClick={() => dispatch(addToCart())}
                                           type="submit"
                                           name="submit"
                                           value="Add to cart"

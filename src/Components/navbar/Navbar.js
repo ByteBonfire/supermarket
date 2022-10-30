@@ -9,8 +9,10 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const Navigate = useNavigate();
 
   return (
     <div>
@@ -45,7 +47,8 @@ const Navbar = () => {
                 type="submit"
                 name="submit"
                 value=""
-                onClick={onOpen}
+                onClick={() => Navigate("/mycart")}
+                // onClick={onOpen}
               >
                 <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
               </button>

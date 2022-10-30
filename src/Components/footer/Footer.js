@@ -92,7 +92,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                  <a href="checkout.html">My Cart</a>
+                  <a href="/mycart">My Cart</a>
                 </li>
                 <li>
                   <i class="fa fa-arrow-right" aria-hidden="true"></i>
