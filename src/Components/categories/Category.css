@@ -11,7 +11,7 @@
 }
 .category-containeror {
   padding: 10px;
-  background-color: brown;
+  /* background-color: brown; */
   display: flex;
   flex-wrap: wrap;
   height: 80%;

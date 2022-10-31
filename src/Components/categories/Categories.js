@@ -71,7 +71,7 @@ const Categories = () => {
                     </div>
                   </div>
 
-                  <div class="agile_top_brand_left_grid1"></div>
+                  {/* <div class="agile_top_brand_left_grid1"></div> */}
                 </div>
               </div>
             </div>

@@ -23,7 +23,7 @@ const Login = ({ information }) => {
         console.log(response, "response");
       })
       .catch((error) => {
-        console.log(error, "oops");
+        console.log(error, "loginfailed");
       });
   };
   return (
