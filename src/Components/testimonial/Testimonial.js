@@ -61,63 +61,6 @@ const Testimonial = () => {
       </div>
     </div>
   );
-  //   return (
-  //     <div>
-  //       <div class="testi">
-  //         <h3 class="w3_agile_header">Testimonial</h3>
-
-  //         <div id="top" class="callbacks_container">
-  //           <ul class="rslides" id="slider5">
-  //             <li>
-  //               <div class="testi-slider">
-  //                 <h4>" I AM VERY PLEASED.</h4>
-  //                 <p>
-  //                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  //                   Suspendisse eu magna dolor, quisque semper.
-  //                 </p>
-  //                 <div class="testi-subscript">
-  //                   <p>
-  //                     <a href="#">John Doe,</a>Adipiscing
-  //                   </p>
-  //                   <span class="w3-agilesub"> </span>
-  //                 </div>
-  //               </div>
-  //             </li>
-  //             <li>
-  //               <div class="testi-slider">
-  //                 <h4>" I AM LOREM IPSUM.</h4>
-  //                 <p>
-  //                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  //                   Suspendisse eu magna dolor, quisque semper.
-  //                 </p>
-  //                 <div class="testi-subscript">
-  //                   <p>
-  //                     <a href="#">elit semper,</a>Dolor Elit
-  //                   </p>
-  //                   <span class="w3-agilesub"> </span>
-  //                 </div>
-  //               </div>
-  //             </li>
-  //             <li>
-  //               <div class="testi-slider">
-  //                 <h4>" CONSECTETUR PIMAGNA.</h4>
-  //                 <p>
-  //                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  //                   Suspendisse eu magna dolor, quisque semper.
-  //                 </p>
-  //                 <div class="testi-subscript">
-  //                   <p>
-  //                     <a href="#">Amet Doe,</a>Suspendisse
-  //                   </p>
-  //                   <span class="w3-agilesub"> </span>
-  //                 </div>
-  //               </div>
-  //             </li>
-  //           </ul>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
 };
 
 export default Testimonial;

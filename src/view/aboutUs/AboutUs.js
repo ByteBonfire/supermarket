@@ -16,7 +16,7 @@ const AboutUs = () => {
         <div style={{ width: "40%" }}>
           <AboutDetail />
         </div>
-        <div style={{ width: "100%", marginLeft: "280px", marginTop: "370px" }}>
+        <div style={{ width: "100%", marginLeft: "280px", marginTop: "350px" }}>
           <Testimonial />
         </div>
       </div>

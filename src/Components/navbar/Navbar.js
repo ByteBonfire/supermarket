@@ -2,17 +2,14 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Button,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+
+import MyCart from "../mycart/MyCart";
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const Navigate = useNavigate();
 
   return (
     <div>
@@ -38,40 +35,28 @@ const Navbar = () => {
             </ul>
           </div>
           <div class="product_list_header">
-            {/* <form action="#" method="post" class="last"> */}
             <div>
-              <input type="hidden" name="cmd" value="_cart" />
-              <input type="hidden" name="display" value="1" />
               <button
                 class="w3view-cart"
                 type="submit"
                 name="submit"
                 value=""
-                onClick={() => Navigate("/mycart")}
-                // onClick={onOpen}
+                onClick={onOpen}
               >
                 <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
               </button>
-              <Modal isOpen={isOpen} onClose={onClose}>
+
+              <Modal isOpen={isOpen} onClose={onClose} size={"3xl"}>
                 <ModalOverlay />
                 <ModalContent>
-                  {/* <ModalHeader>Modal Title</ModalHeader> */}
                   <ModalCloseButton />
                   <ModalBody>
-                    <p>there is no item in cart</p>
+                    <MyCart />
                   </ModalBody>
-
-                  <ModalFooter>
-                    {/* <Button colorScheme="blue" mr={3} onClick={onClose}>
-                      Close
-                    </Button> */}
-                    {/* <Button variant="ghost">Secondary Action</Button> */}
-                  </ModalFooter>
                 </ModalContent>
               </Modal>
             </div>
           </div>
-          <div class="clearfix"> </div>
         </div>
       </div>
     </div>
