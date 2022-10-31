@@ -15,21 +15,19 @@ const Login = ({ information }) => {
     // toast.success("sucess");
     console.log(data, "loginData");
     axios
-      .post(
-        "https://uat.ordering-farmshop.ekbana.net/api/v4/auth/login",
-        {
-          body: JSON.stringify({
-            client_id: 2,
-            client_secret: "2TJrcyMbXT6gDQXVqeSlRbOKvtTfMsuxfuK6vpey",
-            grant_type: "password",
-            username: "koklasstest@gmail.com",
-            password: "123456",
-          }),
-        }
-        // localStorage.getItem("info")
-      )
+
+      .post("https://uat.ordering-farmshop.ekbana.net/api/v4/auth/login", {
+        // body ko Element asare send garne
+        client_id: "2",
+        client_secret: "2TJrcyMbXT6gDQXVqeSlRbOKvtTfMsuxfuK6vpey",
+        grant_type: "password",
+        username: data.email,
+        password: data.password,
+      })
       .then((response) => {
         console.log(response, "response");
+        // tyo bata aako response(access_token) lai localStorage ma save garne
+        localStorage.setItem("access_token", response.data.access_token);
       })
       .catch((error) => {
         console.log(error, "loginfailed");

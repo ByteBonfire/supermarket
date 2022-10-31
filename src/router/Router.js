@@ -15,7 +15,7 @@ import FAQ from "../Components/faq/FAQ";
 import Categories from "../Components/categories/Categories";
 import Try from "../Components/try/Try";
 import NotFound from "../Components/notFound/NotFound";
-import Modale from "../Components/modale/Modale";
+// import Modale from "../Components/modale/Modale";
 import GroceryCatlog from "../Components/grocery/GroceryCatlog";
 import MyCart from "../Components/mycart/MyCart";
 import AboutUs from "../view/aboutUs/AboutUs";
