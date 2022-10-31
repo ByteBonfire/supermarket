@@ -1,0 +1,6 @@
+.testimonial-slider {
+  display: flex;
+  justify-content: end;
+  width: 20%;
+  height: 20%;
+}

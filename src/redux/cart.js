@@ -15,10 +15,6 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    increment(state) {
-      state.value += 1;
-    },
-
     addToCart(state, action) {
       // if the item id is already in the cart, increase the quantity by 1
       // else add the item to the cart
@@ -35,22 +31,23 @@ const cartSlice = createSlice({
       } else {
         const tempProduct = { ...action.payload, cartQuantity: 1 };
         state.cartitem.push(tempProduct);
-
-        toast.success(`${action.payload.title} added successfully`, {
-          position: "top-right",
-        });
       }
       localStorage.setItem("CartitemInfo", JSON.stringify(state.cartitem));
+      // poopin notification using toastify
+      toast.success(`${action.payload.title} added successfully`, {
+        position: "top-right",
+      });
     },
 
     // clear cart
     clearCart(state, action) {
       state.cartitem = [];
-      toast.error(`Your cart is cleared`, {
+      toast.error(`ALL items are cleared`, {
         position: "top-right",
       });
       localStorage.setItem("CartitemInfo", JSON.stringify(state.cartitem));
     },
+
     // to delete an item from the cart
     deleteItem(state, action) {
       const nextCartItem = state.cartitem.filter(
@@ -72,6 +69,7 @@ const cartSlice = createSlice({
       if (state.cartitem[itemIndex].cartQuantity >= 1) {
         state.cartitem[itemIndex].cartQuantity += 1;
       }
+      localStorage.setItem("CartitemInfo", JSON.stringify(state.cartitem));
     },
 
     // decrease the quantity of an item in the cart by 1 if it is already in the cart
@@ -82,6 +80,7 @@ const cartSlice = createSlice({
       if (state.cartitem[itemIndex].cartQuantity > 1) {
         state.cartitem[itemIndex].cartQuantity -= 1;
       }
+      localStorage.setItem("CartitemInfo", JSON.stringify(state.cartitem));
     },
   },
 });

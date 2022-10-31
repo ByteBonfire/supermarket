@@ -16,7 +16,16 @@ const Login = ({ information }) => {
     console.log(data, "loginData");
     axios
       .post(
-        "https://uat.ordering-farmshop.ekbana.net/api/v4/aut/login"
+        "https://uat.ordering-farmshop.ekbana.net/api/v4/auth/login",
+        {
+          body: JSON.stringify({
+            client_id: 2,
+            client_secret: "2TJrcyMbXT6gDQXVqeSlRbOKvtTfMsuxfuK6vpey",
+            grant_type: "password",
+            username: "koklasstest@gmail.com",
+            password: "123456",
+          }),
+        }
         // localStorage.getItem("info")
       )
       .then((response) => {

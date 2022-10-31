@@ -13,7 +13,7 @@ import {
 const MyCart = () => {
   const cartselector = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-
+  // function patudha hamile argument ni patunu paryo mapp garya ko name(cartitems) J xa tai hunxa passing value(cartitems)
   const handleRemoveFromCart = (cartitems) => {
     dispatch(deleteItem(cartitems));
   };
@@ -23,6 +23,7 @@ const MyCart = () => {
   const handleDecreaseitem = (cartitems) => {
     dispatch(decreaseQuantity(cartitems));
   };
+
   const handleCartClear = () => {
     dispatch(clearCart());
   };
@@ -33,7 +34,7 @@ const MyCart = () => {
         <div className="cart-empty">
           <p>Your cart is currently empty</p>
           <div className="start-shopping">
-            <Link to="/">
+            <Link to="/category">
               <AiOutlineArrowLeft />
               <span>Start Shopping</span>
             </Link>
@@ -54,10 +55,13 @@ const MyCart = () => {
                   <img src={cartitems.backgroundImage} alt="" />
                   <div>
                     <h3>{cartitems.title}</h3>
+
                     <button onClick={() => handleRemoveFromCart(cartitems)}>
                       Remove
                     </button>
-                  </div>
+                  </div>{" "}
+                  {/* function patudha hamile argument ni patunu paryo mapp garya ko name(cartitems) 
+                    J xa tai hunxa passing value(cartitems) */}
                 </div>
                 <div className="cart-product-price">${cartitems.price}</div>
                 <div className="cart-product-quantity">
@@ -76,6 +80,7 @@ const MyCart = () => {
             ))}
           </div>
           <div className="cart-summary">
+            {/* cart totally clear garda k he patuna pardaina  */}
             <button className="clear-cart" onClick={() => handleCartClear()}>
               Clear Cart
             </button>
@@ -87,7 +92,7 @@ const MyCart = () => {
               <p>Taxes and VAT are included </p>
               <button>Checkout</button>
               <div className="continue-shopping">
-                <Link to="/">
+                <Link to="/category">
                   <AiOutlineArrowLeft />
                   <span>Continue Shopping</span>
                 </Link>
