@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { Outlet } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Login = ({ information }) => {
-  console.log(information, "hello everyone");
+const Login = () => {
   const {
     register,
     handleSubmit,
@@ -12,8 +12,8 @@ const Login = ({ information }) => {
   } = useForm();
 
   const onsubmit = (data) => {
-    // toast.success("sucess");
-    console.log(data, "loginData");
+    toast.success("Login Sucessfully");
+    // console.log(data, "loginData");
     axios
 
       .post("https://uat.ordering-farmshop.ekbana.net/api/v4/auth/login", {
@@ -25,7 +25,7 @@ const Login = ({ information }) => {
         password: data.password,
       })
       .then((response) => {
-        console.log(response, "response");
+        console.log(response, "loginSuccess");
         // tyo bata aako response(access_token) lai localStorage ma save garne
         localStorage.setItem("access_token", response.data.access_token);
       })
@@ -67,17 +67,25 @@ const Login = ({ information }) => {
               >
                 <form onSubmit={handleSubmit(onsubmit)}>
                   <input
-                    {...register("email")}
+                    {...register("email", { required: true })}
                     type="email"
                     placeholder="Email Address"
-                    required=" "
                   />
+                  {errors.email && (
+                    <p style={{ color: "red", fontSize: "14px" }}>
+                      Enter your valid emailaddress
+                    </p>
+                  )}
                   <input
+                    {...register("password", { required: true })}
                     type="password"
                     placeholder="Password"
-                    required=" "
-                    {...register("password")}
                   />
+                  {errors.password && (
+                    <p style={{ color: "red", fontSize: "14px" }}>
+                      Enter your password
+                    </p>
+                  )}
                   <div class="forgot">
                     <a href="#">Forgot Password?</a>
                   </div>
@@ -99,6 +107,7 @@ const Login = ({ information }) => {
           </div>
         </div>
         <ToastContainer />
+        <Outlet />
       </div>
     </>
   );

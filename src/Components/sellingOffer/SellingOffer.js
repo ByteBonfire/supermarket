@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { useLinkClickHandler } from "react-router-dom";
-import sellingData from "./sellingData";
+import { useNavigate, useLinkClickHandler } from "react-router-dom";
+// import sellingData from "./sellingData";
 import "./sellingOffer.css";
-import sellingData1 from "./sellingData2";
+// import sellingData1 from "./sellingData2";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cart";
 
 const SellingOffer = () => {
+  const Navigate = useNavigate();
   const [offer1, setOffer1] = useState(false);
+
   const handler1 = () => {
     setOffer1(!offer1);
   };
   const dispatch = useDispatch();
   const handleAddToCart = (data) => {
-    dispatch(addToCart(data));
+    {
+      dispatch(addToCart(data));
+      Navigate("/mycart");
+    }
   };
   const handleAddToCart1 = (data1) => {
     dispatch(addToCart(data1));
@@ -44,7 +49,7 @@ const SellingOffer = () => {
         // );
         setSellingitem(res.data.data.slice(0, 6));
         setIsLoading(!isLoading);
-        console.log(sellingitem, "holo");
+        // console.log(sellingitem, "katta");
       })
       .catch((err) => {
         console.log(err, "sorry");

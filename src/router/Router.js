@@ -33,6 +33,9 @@ const Router = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Navigate replace to="/home" />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/contactUs" element={<ContactUs />} />
+          <Route path="/advertiseoffer" element={<AdvertiseOffer />} />
+          <Route path="/offer" element={<Navigate to="/advertiseoffer" />} />
 
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
@@ -43,18 +46,15 @@ const Router = () => {
             element={Auth ? <Login /> : <Navigate to="/signup" />}
           /> */}
           {/* privating routing for signup ends*/}
-          <Route path="/contactUs" element={<ContactUs />} />
-          <Route path="/advertiseoffer" element={<AdvertiseOffer />} />
-          <Route path="/offer" element={<Navigate to="/advertiseoffer" />} />
 
-          <Route path="/shortcodes" element={<ShortCodes />} />
-          <Route path="/faq" element={<FAQ />} />
           <Route path="/category" element={<Categories />} />
-          {/* <Route path="/modale" element={<Modale />} /> */}
-          <Route path="/*" element={<NotFound />} />
+
           <Route path="/productlist" element={<GroceryCatlog />} />
           <Route path="/mycart" element={<MyCart />} />
 
+          <Route path="/shortcodes" element={<ShortCodes />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/*" element={<NotFound />} />
           <Route path="/try" element={<Try />} />
         </Routes>
         <Footer />
