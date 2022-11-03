@@ -16,13 +16,12 @@ const SellingOffer = () => {
   };
   const dispatch = useDispatch();
   const handleAddToCart = (data) => {
-    {
-      dispatch(addToCart(data));
-      Navigate("/mycart");
-    }
+    dispatch(addToCart(data));
+    Navigate("/mycart");
   };
   const handleAddToCart1 = (data1) => {
     dispatch(addToCart(data1));
+    Navigate("/mycart");
   };
 
   const [sellingitem, setSellingitem] = useState([]);

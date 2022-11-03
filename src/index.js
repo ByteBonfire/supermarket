@@ -8,15 +8,17 @@ import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+// import { AuthProvider } from "./authProvider/AuthProvider";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ChakraProvider>
+      {/* <AuthProvider> */}
       <Provider store={store}>
         <ToastContainer />
         <App />
       </Provider>
+      {/* </AuthProvider> */}
     </ChakraProvider>
   </React.StrictMode>
 );
