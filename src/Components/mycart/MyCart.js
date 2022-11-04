@@ -12,6 +12,7 @@ import {
 } from "../../redux/cart";
 
 const MyCart = () => {
+  var totalprice = 0;
   const Navigate = useNavigate();
   const cartselector = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -54,19 +55,44 @@ const MyCart = () => {
             {cartselector.cartitem?.map((cartitems) => (
               <div className="cart-item">
                 <div className="cart-product">
-                  <img src={cartitems.backgroundImage} alt="" />
+                  <img src={cartitems.images[0].imageName} alt="" />
                   <div>
                     <h3>{cartitems.title}</h3>
 
+                    {/* function patudha hamile argument ni patunu paryo mapp garya ko name(cartitems) 
+                    J xa tai hunxa passing value(cartitems) */}
                     <button onClick={() => handleRemoveFromCart(cartitems)}>
                       Remove
                     </button>
                   </div>{" "}
-                  {/* function patudha hamile argument ni patunu paryo mapp garya ko name(cartitems) 
-                    J xa tai hunxa passing value(cartitems) */}
                 </div>
-                <div className="cart-product-price">${cartitems.price}</div>
-                <div className="cart-product-quantity">
+                {/* need to double mapping to access sellingPrice inside unitPrice  */}
+                {cartitems.unitPrice.map((newcartitems) => {
+                  //  for total price calculation
+                  totalprice +=
+                    newcartitems.sellingPrice * cartitems.cartQuantity;
+                  return (
+                    <>
+                      <div className="cart-product-price">
+                        Rs {newcartitems.sellingPrice}
+                      </div>
+                      <div className="cart-product-quantity">
+                        <button onClick={() => handleDecreaseitem(cartitems)}>
+                          -
+                        </button>
+                        <div className="count">{cartitems.cartQuantity}</div>
+                        <button onClick={() => handleIncreaseitem(cartitems)}>
+                          +
+                        </button>
+                      </div>
+                      <div className="cart-product-total-price">
+                        Rs {newcartitems.sellingPrice * cartitems.cartQuantity}
+                      </div>
+                    </>
+                  );
+                })}
+
+                {/* <div className="cart-product-quantity">
                   <button onClick={() => handleDecreaseitem(cartitems)}>
                     -
                   </button>
@@ -74,10 +100,10 @@ const MyCart = () => {
                   <button onClick={() => handleIncreaseitem(cartitems)}>
                     +
                   </button>
-                </div>
-                <div className="cart-product-total-price">
+                </div> */}
+                {/* <div className="cart-product-total-price">
                   ${cartitems.price * cartitems.cartQuantity}
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
@@ -89,7 +115,10 @@ const MyCart = () => {
             <div className="cart-checkout">
               <div className="subtotal">
                 <span>Subtotal:</span>
-                <span className="amount">${cartselector.cartTotalAmount}</span>
+                <span className="amount">
+                  {/* Rs {cartselector.cartTotalAmount} */}
+                  Rs {totalprice}
+                </span>
               </div>
               <p>Taxes and VAT are included </p>
               <Link to="/payment">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useLinkClickHandler } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import sellingData from "./sellingData";
 import "./sellingOffer.css";
 // import sellingData1 from "./sellingData2";
@@ -35,7 +35,6 @@ const SellingOffer = () => {
   const [sellingitem, setSellingitem] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // const hitme = () => {
   useEffect(() => {
     axios
       .get(
@@ -48,22 +47,14 @@ const SellingOffer = () => {
         }
       )
       .then((res) => {
-        // console.log(
-        //   res.data.data
-        //     .slice(0, 10)
-        //     .map((item) => console.log(item.id, "batti")),
-        //   "okay"
-        // );
+        console.log(res.data.data);
         setSellingitem(res.data.data.slice(0, 6));
         setIsLoading(!isLoading);
-        // console.log(sellingitem, "katta");
       })
       .catch((err) => {
         console.log(err, "sorry");
       });
   }, [setSellingitem]);
-
-  // };
 
   return (
     <div class="top-brands">
@@ -151,19 +142,39 @@ const SellingOffer = () => {
                                     />
                                   </div>
                                   <div class="product-Desc">
-                                    <img src="" alt="image" />
-                                    <p>{data.title}</p>
-                                    <p>{data.categoryTitle}</p>
-                                    <p>{data.categorySlug}</p>
-                                    {/* <div className="productPrice">
-                                    <p>{data1.price}</p>
-                                    <p>{data1.discountedprice}</p>
-                                  </div> */}
-                                    <p>{data.rating}</p>
+                                    {data.images.map((imgdata, index) => {
+                                      return (
+                                        <>
+                                          <img
+                                            src={imgdata.imageName}
+                                            alt=""
+                                            width="100px"
+                                            height="70px"
+                                          />
+                                        </>
+                                      );
+                                    })}
+
+                                    <p>ItemName:{data.title}</p>
+                                    <p>Category: {data.categoryTitle}</p>
+
+                                    {data.unitPrice.map((pricedata, index) => {
+                                      return (
+                                        <>
+                                          <p>
+                                            SellingPrice:
+                                            {pricedata.sellingPrice}
+                                          </p>
+                                          <p>
+                                            MarkedPrice: {pricedata.markedPrice}
+                                          </p>
+                                        </>
+                                      );
+                                    })}
 
                                     <div class="snipcart-details top_brand_home_details">
                                       <input
-                                        onClick={() => handleAddToCart1(data)}
+                                        onClick={() => handleAddToCart(data)}
                                         type="submit"
                                         name="submit"
                                         value="Add to cart"
@@ -212,16 +223,38 @@ const SellingOffer = () => {
                                     />
                                   </div>
                                   <div class="product-Desc">
-                                    <img src="" alt="image" />
-                                    <p>{data1.title}</p>
-                                    <p>{data1.categoryTitle}</p>
-                                    <p>{data1.categorySlug}</p>
-                                    {/* <div className="productPrice">
-                                    <p>{data1.price}</p>
-                                    <p>{data1.discountedprice}</p>
-                                  </div> */}
-                                    <p>{data1.rating}</p>
+                                    {data1.images.map((imgdata1, index) => {
+                                      return (
+                                        <>
+                                          <img
+                                            src={imgdata1.imageName}
+                                            alt=""
+                                            width="100px"
+                                            height="70px"
+                                          />
+                                        </>
+                                      );
+                                    })}
 
+                                    <p>ItemName:{data1.title}</p>
+                                    <p>Category: {data1.categoryTitle}</p>
+
+                                    {data1.unitPrice.map(
+                                      (pricedata1, index) => {
+                                        return (
+                                          <>
+                                            <p>
+                                              SellingPrice:{" "}
+                                              {pricedata1.sellingPrice}
+                                            </p>
+                                            <p>
+                                              MarkedPrice:{" "}
+                                              {pricedata1.markedPrice}
+                                            </p>
+                                          </>
+                                        );
+                                      }
+                                    )}
                                     <div class="snipcart-details top_brand_home_details">
                                       <input
                                         onClick={() => handleAddToCart1(data1)}

@@ -1,13 +1,13 @@
 // import { useState } from "react";
 import { useForm } from "react-hook-form";
 // import Login from "../login/Login";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 // import { Center } from "@chakra-ui/react";
 
 const Signup = () => {
-  // const Navigate = useNavigate();
+  const Navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -34,6 +34,7 @@ const Signup = () => {
       // setShow(!show)
       toast.success("successfully submitted");
       reset();
+      Navigate("/login");
       // alert('successfully submitted')
     } else {
       toast.error("Fill form again");

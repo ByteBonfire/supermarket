@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { useNavigate, Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import { useContext } from "react";
@@ -16,7 +16,8 @@ const Login = () => {
 
   const onsubmit = (data) => {
     toast.success("Login Sucessfully");
-    // console.log(data, "loginData");
+    Navigate("/");
+
     axios
 
       .post("https://uat.ordering-farmshop.ekbana.net/api/v4/auth/login", {
@@ -31,7 +32,6 @@ const Login = () => {
         console.log(response, "loginSuccess");
         // tyo bata aako response(access_token) lai localStorage ma save garne
         localStorage.setItem("access_token", response.data.access_token);
-        localStorage.setItem("login", true);
       })
       .catch((error) => {
         console.log(error, "loginfailed");
@@ -111,7 +111,6 @@ const Login = () => {
           </div>
         </div>
         <ToastContainer />
-        <Outlet />
       </div>
     </>
   );
