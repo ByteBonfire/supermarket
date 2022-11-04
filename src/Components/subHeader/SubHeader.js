@@ -19,22 +19,22 @@ const SubHeader = () => {
               <ul class="multi-column-dropdown">
                 <h6>All Groceries</h6>
                 <li>
-                  <a href="groceries.html">Dals & Pulses</a>
+                  <a href="/category">Dals & Pulses</a>
                 </li>
                 <li>
-                  <a href="groceries.html">Almonds</a>
+                  <a href="/category">Almonds</a>
                 </li>
                 <li>
-                  <a href="groceries.html">Cashews</a>
+                  <a href="/category">Cashews</a>
                 </li>
                 <li>
-                  <a href="groceries.html">Dry Fruit</a>
+                  <a href="/category">Dry Fruit</a>
                 </li>
                 <li>
-                  <a href="groceries.html"> Mukhwas </a>
+                  <a href="/category"> Mukhwas </a>
                 </li>
                 <li>
-                  <a href="groceries.html">Rice & Rice Products</a>
+                  <a href="/category">Rice & Rice Products</a>
                 </li>
               </ul>
             </div>
@@ -45,22 +45,22 @@ const SubHeader = () => {
               <ul class="multi-column-dropdown">
                 <h6>All Household</h6>
                 <li>
-                  <a href="household.html">Cookware</a>
+                  <a href="/category">Cookware</a>
                 </li>
                 <li>
-                  <a href="household.html">Dust Pans</a>
+                  <a href="/category">Dust Pans</a>
                 </li>
                 <li>
-                  <a href="household.html">Scrubbers</a>
+                  <a href="/category">Scrubbers</a>
                 </li>
                 <li>
-                  <a href="household.html">Dust Cloth</a>
+                  <a href="/category">Dust Cloth</a>
                 </li>
                 <li>
-                  <a href="household.html"> Mops </a>
+                  <a href="/category"> Mops </a>
                 </li>
                 <li>
-                  <a href="household.html">Kitchenware</a>
+                  <a href="/category">Kitchenware</a>
                 </li>
               </ul>
             </div>
@@ -73,22 +73,22 @@ const SubHeader = () => {
               <ul class="multi-column-dropdown">
                 <h6>Baby Care</h6>
                 <li>
-                  <a href="personalcare.html">Baby Soap</a>
+                  <a href="/category">Baby Soap</a>
                 </li>
                 <li>
-                  <a href="personalcare.html">Baby Care Accessories</a>
+                  <a href="/category">Baby Care Accessories</a>
                 </li>
                 <li>
-                  <a href="personalcare.html">Baby Oil & Shampoos</a>
+                  <a href="/category">Baby Oil & Shampoos</a>
                 </li>
                 <li>
-                  <a href="personalcare.html">Baby Creams & Lotion</a>
+                  <a href="/category">Baby Creams & Lotion</a>
                 </li>
                 <li>
-                  <a href="personalcare.html"> Baby Powder</a>
+                  <a href="/category"> Baby Powder</a>
                 </li>
                 <li>
-                  <a href="personalcare.html">Diapers & Wipes</a>
+                  <a href="/category">Diapers & Wipes</a>
                 </li>
               </ul>
             </div>
@@ -99,22 +99,22 @@ const SubHeader = () => {
               <ul class="multi-column-dropdown">
                 <h6>All Accessories</h6>
                 <li>
-                  <a href="packagedfoods.html">Baby Food</a>
+                  <a href="/category">Baby Food</a>
                 </li>
                 <li>
-                  <a href="packagedfoods.html">Dessert Items</a>
+                  <a href="/category">Dessert Items</a>
                 </li>
                 <li>
-                  <a href="packagedfoods.html">Biscuits</a>
+                  <a href="/category">Biscuits</a>
                 </li>
                 <li>
-                  <a href="packagedfoods.html">Breakfast Cereals</a>
+                  <a href="/category">Breakfast Cereals</a>
                 </li>
                 <li>
-                  <a href="packagedfoods.html"> Canned Food </a>
+                  <a href="/category"> Canned Food </a>
                 </li>
                 <li>
-                  <a href="packagedfoods.html">Chocolates & Sweets</a>
+                  <a href="/category">Chocolates & Sweets</a>
                 </li>
               </ul>
             </div>
@@ -125,22 +125,22 @@ const SubHeader = () => {
               <ul class="multi-column-dropdown">
                 <h6>Tea & Coeffe</h6>
                 <li>
-                  <a href="beverages.html">Green Tea</a>
+                  <a href="/category">Green Tea</a>
                 </li>
                 <li>
-                  <a href="beverages.html">Ground Coffee</a>
+                  <a href="/category">Ground Coffee</a>
                 </li>
                 <li>
-                  <a href="beverages.html">Herbal Tea</a>
+                  <a href="/category">Herbal Tea</a>
                 </li>
                 <li>
-                  <a href="beverages.html">Instant Coffee</a>
+                  <a href="/category">Instant Coffee</a>
                 </li>
                 <li>
-                  <a href="beverages.html"> Tea </a>
+                  <a href="/category"> Tea </a>
                 </li>
                 <li>
-                  <a href="beverages.html">Tea Bags</a>
+                  <a href="/category">Tea Bags</a>
                 </li>
               </ul>
             </div>

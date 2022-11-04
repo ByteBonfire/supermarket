@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { Outlet } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import { useContext } from "react";
 // import AuthContext from "../../authProvider/AuthProvider";
 
 const Login = () => {
+  const Navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -30,6 +31,7 @@ const Login = () => {
         console.log(response, "loginSuccess");
         // tyo bata aako response(access_token) lai localStorage ma save garne
         localStorage.setItem("access_token", response.data.access_token);
+        localStorage.setItem("login", true);
       })
       .catch((error) => {
         console.log(error, "loginfailed");

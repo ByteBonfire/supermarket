@@ -8,7 +8,7 @@ const DelivaryAddress = () => {
       .get("https://uat.ordering-farmshop.ekbana.net/api/v4/delivery-address", {
         headers: {
           "Api-Key": "3uxpudnPFywb4AYZjjpbhOHRV3YMTNscyRF4AiVZi2go6brJMx",
-          access_token: localStorage.getItem("access_token"),
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
         },
       })
       .then((response) => {

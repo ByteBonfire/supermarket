@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import "./mycart.css";
+
 import {
   deleteItem,
   increaseQuantity,
@@ -11,6 +12,7 @@ import {
 } from "../../redux/cart";
 
 const MyCart = () => {
+  const Navigate = useNavigate();
   const cartselector = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   // function patudha hamile argument ni patunu paryo mapp garya ko name(cartitems) J xa tai hunxa passing value(cartitems)
@@ -90,7 +92,9 @@ const MyCart = () => {
                 <span className="amount">${cartselector.cartTotalAmount}</span>
               </div>
               <p>Taxes and VAT are included </p>
-              <button>Checkout</button>
+              <Link to="/payment">
+                <button>Checkout</button>
+              </Link>
               <div className="continue-shopping">
                 <Link to="/category">
                   <AiOutlineArrowLeft />

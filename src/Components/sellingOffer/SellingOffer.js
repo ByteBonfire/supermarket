@@ -16,12 +16,20 @@ const SellingOffer = () => {
   };
   const dispatch = useDispatch();
   const handleAddToCart = (data) => {
-    dispatch(addToCart(data));
-    Navigate("/mycart");
+    if (localStorage.getItem("access_token") !== null) {
+      dispatch(addToCart(data));
+      Navigate("/mycart");
+    } else {
+      Navigate("/login");
+    }
   };
   const handleAddToCart1 = (data1) => {
-    dispatch(addToCart(data1));
-    Navigate("/mycart");
+    if (localStorage.getItem("access_token") !== null) {
+      dispatch(addToCart(data1));
+      Navigate("/mycart");
+    } else {
+      Navigate("/login");
+    }
   };
 
   const [sellingitem, setSellingitem] = useState([]);
@@ -148,14 +156,14 @@ const SellingOffer = () => {
                                     <p>{data.categoryTitle}</p>
                                     <p>{data.categorySlug}</p>
                                     {/* <div className="productPrice">
-                                    <p>{data.unitPrice.sellingPrice}</p>
-                                    {console.log(data.unitPrice.sellingPrice)}
-                                    <p>{data.discountedprice}</p>
+                                    <p>{data1.price}</p>
+                                    <p>{data1.discountedprice}</p>
                                   </div> */}
                                     <p>{data.rating}</p>
+
                                     <div class="snipcart-details top_brand_home_details">
                                       <input
-                                        onClick={() => handleAddToCart(data)}
+                                        onClick={() => handleAddToCart1(data)}
                                         type="submit"
                                         name="submit"
                                         value="Add to cart"

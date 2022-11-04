@@ -37,7 +37,7 @@ const Payment = () => {
             <div className="payment-container">
               <div className="pay-design">
                 <img src={payroll.icon} alt="" />
-                <p>{payroll.title}</p>
+                <p className="payment-title">{payroll.title}</p>
                 <div className="botton">
                   <button onClick={() => handlepay()}>Pay</button>
                 </div>
