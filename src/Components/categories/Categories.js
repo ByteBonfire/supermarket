@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Category.css";
 
-import { useDispatch } from "react-redux";
-
 import { useNavigate } from "react-router-dom";
 import GroceryCatlog from "../grocery/GroceryCatlog";
+// import Product from "../productAll/Product";
 
 const Categories = () => {
   const [catagorylist, setCategorylist] = useState([]);
@@ -14,7 +13,7 @@ const Categories = () => {
   const Navigate = useNavigate();
 
   const handleAddToCart = (data) => {
-    Navigate("/");
+    Navigate("/product");
   };
 
   useEffect(() => {
@@ -53,7 +52,7 @@ const Categories = () => {
             <GroceryCatlog />
           </div>
           <div className="category-containeror">
-            {catagorylist.slice(0, 9).map((data, index) => {
+            {catagorylist.slice(0, 6).map((data, index) => {
               return (
                 <>
                   <div class="col-md-4 top_brand_left product-cartt">
@@ -66,7 +65,7 @@ const Categories = () => {
                             class="img-responsive"
                           />
                         </div>
-                        <div class="product-Desc">
+                        <div className="product-Desc">
                           <img
                             src={data.backgroundImage}
                             className="category-image"

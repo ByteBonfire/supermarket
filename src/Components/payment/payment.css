@@ -16,29 +16,20 @@
   margin: auto;
   display: flex;
   flex-direction: row;
-  /* width: 1000px; */
-  /* background-color: #4caf50; */
+
   flex-wrap: wrap;
   justify-content: center;
-  /* flex-wrap: wrap;
-  background-color: #2196f3;
-  padding: 10px; */
 }
 
 .pay-design {
   padding: 20px;
   margin: auto;
   width: 40%;
-  /* height: 250px; */
+
   justify-content: center;
   border: 1px solid black;
   margin: 10px;
   border-radius: 10px;
-  /* border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  width: 100px;
-  text-align: center; */
 }
 .payment-title {
   font-size: 24px;
@@ -52,7 +43,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 24px;
-  /* margin: 4px 2px; */
+
   transition-duration: 0.4s;
   cursor: pointer;
 

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../categories/Category.css";
+import "./product.css";
 // import "../sellingOffer/sellingOffer.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cart";
 import { useNavigate } from "react-router-dom";
 
-const Categories = () => {
+const Product = () => {
   const [catagorylist, setCategorylist] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [login, setLogin] = useState(localStorage.getItem("login"));
@@ -16,8 +16,12 @@ const Categories = () => {
   const Navigate = useNavigate();
 
   const handleAddToCart = (data) => {
-    dispatch(addToCart(data));
-    Navigate("/mycart");
+    if (localStorage.getItem("access_token") !== null) {
+      dispatch(addToCart(data));
+      Navigate("/mycart");
+    } else {
+      Navigate("/login");
+    }
   };
 
   useEffect(() => {
@@ -53,10 +57,10 @@ const Categories = () => {
         </p>
       ) : (
         <div className="category-containeror">
-          {catagorylist.slice(0, 9).map((data, index) => {
+          {catagorylist.slice(0, 6).map((data, index) => {
             return (
               <>
-                <div class="col-md-4 top_brand_left product-cartt">
+                <div class="col-md-4 top_brand_left product-cart">
                   <div class="hover14 column">
                     <div class="agile_top_brand_left_grid">
                       <div class="agile_top_brand_left_grid_pos">
@@ -67,15 +71,44 @@ const Categories = () => {
                         />
                       </div>
                       <div class="product-Desc">
-                        <img
-                          src={data.backgroundImage}
-                          width="65rem"
-                          height="35rem"
-                        />
-                        <p>{data.title}</p>
-                        {/* <p>ProductId: {data.id}</p> */}
+                        {data.images.map((imgdata, index) => {
+                          return (
+                            <>
+                              <img
+                                src={imgdata.imageName}
+                                alt=""
+                                width="100px"
+                                height="70px"
+                              />
+                            </>
+                          );
+                        })}
 
-                        <p>ProductCount: {data.productCount}</p>
+                        <p
+                          style={{
+                            width: "220px",
+                            height: "80px",
+                            marginLeft: "15px",
+                          }}
+                        >
+                          ItemName:{data.title}
+                        </p>
+                        <p style={{ marginTop: "-12px" }}>
+                          Category: {data.categoryTitle}
+                        </p>
+
+                        {data.unitPrice.map((pricedata, index) => {
+                          return (
+                            <>
+                              <p>
+                                SellingPrice:
+                                {pricedata.sellingPrice}
+                              </p>
+                              <p>MarkedPrice: {pricedata.markedPrice}</p>
+                            </>
+                          );
+                        })}
+
                         <div class="snipcart-details top_brand_home_details">
                           <input
                             onClick={() => handleAddToCart(data)}
@@ -86,8 +119,6 @@ const Categories = () => {
                           />
                         </div>
                       </div>
-
-                      {/* <div class="agile_top_brand_left_grid1"></div> */}
                     </div>
                   </div>
                 </div>
@@ -100,4 +131,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default Product;
