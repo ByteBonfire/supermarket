@@ -20,6 +20,7 @@ import MyCart from "../Components/mycart/MyCart";
 import AboutUs from "../view/aboutUs/AboutUs";
 import Checkout from "../view/checkout/Checkout";
 import Product from "../Components/productAll/Product";
+import ForgetPassword from "../Components/login/ForgetPassword";
 
 const Router = () => {
   return (
@@ -57,6 +58,7 @@ const Router = () => {
           <Route path="/*" element={<NotFound />} />
           <Route path="/product" element={<Product />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/fpassword" element={<ForgetPassword />} />
         </Routes>
         <Footer />
       </BrowserRouter>

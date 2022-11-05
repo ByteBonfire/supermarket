@@ -4,7 +4,6 @@ import "./Category.css";
 
 import { useNavigate } from "react-router-dom";
 import GroceryCatlog from "../grocery/GroceryCatlog";
-// import Product from "../productAll/Product";
 
 const Categories = () => {
   const [catagorylist, setCategorylist] = useState([]);
