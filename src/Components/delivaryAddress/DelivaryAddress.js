@@ -40,18 +40,31 @@ const DelivaryAddress = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(submitAddress)}>
+      <form
+        onSubmit={handleSubmit(submitAddress)}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          border: "1px solid gray",
+          fontSize: "20px",
+          width: "20%",
+          margin: "auto",
+        }}
+      >
         <input
           {...register("DeliveryAddress", { required: true })}
           Placeholder="DeliveryAddress"
         />
+        <br />
         <input {...register("Latitude")} Placeholder="Latitude" />
+        <br />
 
         <input {...register("Longitude")} Placeholder="Longitude" />
+        <br />
 
         <input type="submit" />
         <div>
-          <p>hello my friend</p>
           {/* {deliveryaddress.map((data, index) => {
             return (
               <>

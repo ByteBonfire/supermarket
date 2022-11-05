@@ -3,8 +3,6 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import { useContext } from "react";
-// import AuthContext from "../../authProvider/AuthProvider";
 
 const Login = () => {
   const Navigate = useNavigate();
@@ -12,11 +10,17 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const onsubmit = (data) => {
-    toast.success("Login Sucessfully");
-    Navigate("/");
+    if (data.email !== "" && data.password !== "") {
+      toast.success("Login Sucessfully");
+      reset();
+      Navigate("/");
+    } else {
+      toast.error("Sorry login failed");
+    }
 
     axios
 
@@ -81,7 +85,7 @@ const Login = () => {
                     </p>
                   )}
                   <input
-                    {...register("password", { required: true })}
+                    {...register("password")}
                     type="password"
                     placeholder="Password"
                   />

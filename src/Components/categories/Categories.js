@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Category.css";
-// import "../sellingOffer/sellingOffer.css";
+
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../redux/cart";
+
 import { useNavigate } from "react-router-dom";
 import GroceryCatlog from "../grocery/GroceryCatlog";
 
@@ -11,17 +11,10 @@ const Categories = () => {
   const [catagorylist, setCategorylist] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const dispatch = useDispatch();
-
   const Navigate = useNavigate();
 
   const handleAddToCart = (data) => {
-    if (localStorage.getItem("access_token") !== null) {
-      dispatch(addToCart(data));
-      Navigate("/mycart");
-    } else {
-      Navigate("/login");
-    }
+    Navigate("/");
   };
 
   useEffect(() => {
@@ -76,27 +69,21 @@ const Categories = () => {
                         <div class="product-Desc">
                           <img
                             src={data.backgroundImage}
-                            // width="65rem"
-                            // height="35rem"
-
                             className="category-image"
                           />
                           <p>{data.title}</p>
-                          {/* <p>ProductId: {data.id}</p> */}
 
                           <p>ProductCount: {data.productCount}</p>
                           <div class="snipcart-details top_brand_home_details">
                             <input
-                              onClick={() => handleAddToCart(data)}
+                              onClick={() => handleAddToCart()}
                               type="submit"
                               name="submit"
-                              value="Add to cart"
+                              value="Details"
                               class="button"
                             />
                           </div>
                         </div>
-
-                        {/* <div class="agile_top_brand_left_grid1"></div> */}
                       </div>
                     </div>
                   </div>

@@ -121,7 +121,7 @@ const MyCart = () => {
                 </span>
               </div>
               <p>Taxes and VAT are included </p>
-              <Link to="/payment">
+              <Link to="/checkout">
                 <button>Checkout</button>
               </Link>
               <div className="continue-shopping">

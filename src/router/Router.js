@@ -19,8 +19,9 @@ import NotFound from "../Components/notFound/NotFound";
 import GroceryCatlog from "../Components/grocery/GroceryCatlog";
 import MyCart from "../Components/mycart/MyCart";
 import AboutUs from "../view/aboutUs/AboutUs";
-import Payment from "../Components/payment/Payment";
-import DelivaryAddress from "../Components/delivaryAddress/DelivaryAddress";
+import Checkout from "../view/checkout/Checkout";
+// import Payment from "../Components/payment/Payment";
+// import DelivaryAddress from "../Components/delivaryAddress/DelivaryAddress";
 
 const Router = () => {
   return (
@@ -57,8 +58,9 @@ const Router = () => {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/*" element={<NotFound />} />
           <Route path="/try" element={<Try />} />
-          <Route path="/payment" element={<Payment />} />
-          <Route path="/address" element={<DelivaryAddress />} />
+          <Route path="/checkout" element={<Checkout />} />
+          {/* <Route path="/payment" element={<Payment />} /> */}
+          {/* <Route path="/address" element={<DelivaryAddress />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter>

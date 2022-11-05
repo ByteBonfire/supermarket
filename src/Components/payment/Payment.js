@@ -8,7 +8,10 @@ import "./payment.css";
 const Payment = () => {
   const [payment, setPayment] = useState([]);
   const handlepay = () => {
-    toast.success("Payment reccieved", { position: "top-center" });
+    toast.success("Payment recieved", { position: "top-left" });
+    toast.info("Delivery Address is send to our Delivery Driver", {
+      position: "top-right",
+    });
   };
   useEffect(() => {
     axios

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { collapseToast } from "react-toastify";
+import { collapseToast, toast } from "react-toastify";
 
 const ContactUs = () => {
   const {
@@ -11,6 +11,7 @@ const ContactUs = () => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data, "contactus");
+    toast.success("Your query is recorded ");
 
     axios
       .post("https://uat.ordering-farmshop.ekbana.net/api/v4/contact-us", {

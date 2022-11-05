@@ -18,7 +18,7 @@ const Navbar = () => {
           <div class="w3l_offers">
             <p>
               SALE UP TO 70% OFF. USE CODE "SALE70%" .{" "}
-              <a href="products.html">SHOP NOW</a>
+              <a href="/category">SHOP NOW</a>
             </p>
           </div>
           <div class="agile-login">
