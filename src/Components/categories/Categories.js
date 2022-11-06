@@ -54,7 +54,7 @@ const Categories = () => {
             {catagorylist.slice(0, 6).map((data, index) => {
               return (
                 <>
-                  <div class="col-md-4 top_brand_left product-cartt">
+                  <div class="col-md-4 top_brand_left product-cart1">
                     <div class="hover14 column">
                       <div class="agile_top_brand_left_grid">
                         <div class="agile_top_brand_left_grid_pos">

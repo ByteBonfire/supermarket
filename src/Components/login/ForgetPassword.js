@@ -26,7 +26,7 @@ const ForgetPassword = () => {
         {
           headers: {
             "Api-Key": "3uxpudnPFywb4AYZjjpbhOHRV3YMTNscyRF4AiVZi2go6brJMx",
-            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+            // Authorization: `Bearer ${localStorage.getItem("access_token")}`,
           },
         }
       )
