@@ -36,6 +36,7 @@ const Login = () => {
         console.log(response, "loginSuccess");
         // tyo bata aako response(access_token) lai localStorage ma save garne
         localStorage.setItem("access_token", response.data.access_token);
+        localStorage.setItem("login", "true");
       })
       .catch((error) => {
         console.log(error, "loginfailed");

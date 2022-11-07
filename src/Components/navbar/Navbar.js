@@ -6,6 +6,7 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
+// import { useState } from "react";
 
 import MyCart from "../mycart/MyCart";
 const Navbar = () => {
@@ -26,9 +27,11 @@ const Navbar = () => {
               <li>
                 <a href="/signup"> Create Account </a>
               </li>
+
               <li>
                 <a href="/login">Login</a>
               </li>
+
               <li>
                 <a href="/contactUs">Help</a>
               </li>
