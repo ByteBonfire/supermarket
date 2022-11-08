@@ -22,6 +22,7 @@ import Checkout from "../view/checkout/Checkout";
 import Product from "../Components/productAll/Product";
 import ForgetPassword from "../Components/login/ForgetPassword";
 import Logout from "../Components/login/Logout";
+import SinglePage from "../Components/singlepage/SinglePage";
 
 const Router = () => {
   return (
@@ -61,6 +62,7 @@ const Router = () => {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/fpassword" element={<ForgetPassword />} />
           <Route path="/logout" element={<Logout />} />
+          {/* <Route path="/singlepage" element={<SinglePage />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -5,15 +5,19 @@ import "./product.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cart";
 import { useNavigate } from "react-router-dom";
+// import SinglePage from "../singlepage/SinglePage";
 
 const Product = () => {
   const [catagorylist, setCategorylist] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [login, setLogin] = useState(localStorage.getItem("login"));
+  // const [login, setLogin] = useState(localStorage.getItem("login"));
 
   const dispatch = useDispatch();
 
   const Navigate = useNavigate();
+  // const detailHandler = () => {
+  //   <SinglePage />;
+  // };
 
   const handleAddToCart = (data) => {
     if (localStorage.getItem("access_token") !== null) {
@@ -56,7 +60,7 @@ const Product = () => {
           Loading....
         </p>
       ) : (
-        <div className="category-containeror">
+        <div className="category-containerorer">
           {catagorylist.slice(0, 6).map((data, index) => {
             return (
               <>
@@ -90,8 +94,9 @@ const Product = () => {
                             height: "80px",
                             marginLeft: "15px",
                           }}
+                          // onClick={() => detailHandler()}
                         >
-                          ItemName:{data.title}
+                          ItemName: {data.title}
                         </p>
                         <p style={{ marginTop: "-12px" }}>
                           Category: {data.categoryTitle}
