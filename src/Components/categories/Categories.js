@@ -51,7 +51,7 @@ const Categories = () => {
             <GroceryCatlog />
           </div>
           <div className="category-containeror">
-            {catagorylist.slice(0, 6).map((data, index) => {
+            {catagorylist.slice(0, 9).map((data, index) => {
               return (
                 <>
                   <div class="col-md-4 top_brand_left product-cart1">
