@@ -4,14 +4,17 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 import "./payment.css";
+// import { useNavigate } from "react";
 
 const Payment = () => {
+  // const Navigate = useNavigate();
   const [payment, setPayment] = useState([]);
   const handlepay = () => {
-    toast.success("Payment recieved", { position: "top-left" });
+    toast.success("Payment recieved", { position: "top-right" });
     toast.info("Delivery Address is send to our Delivery Driver", {
-      position: "top-right",
+      position: "top-left",
     });
+    // Navigate("/");
   };
   useEffect(() => {
     axios
